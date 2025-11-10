@@ -1,15 +1,22 @@
-import db from './database.js';
+import { dbPublic, dbPrivate } from './database.js';
 
-console.log('🚀 Initialisation de la base de données...');
+console.log('🚀 Initialisation des bases de données...');
 
-// La base de données est déjà initialisée avec la structure par défaut
-await db.read();
+// Bases déjà initialisées avec la structure par défaut
+await dbPublic.read();
+await dbPrivate.read();
 
-console.log('✅ Base de données initialisée avec succès !');
-console.log('📊 Structure :');
-console.log('   - users');
+console.log('✅ Bases de données initialisées avec succès !');
+console.log('\n📊 Base PUBLIQUE (verbes) :');
 console.log('   - verbs');
+console.log(`   📁 Fichier : versionné dans git`);
+
+console.log('\n📊 Base PRIVÉE (utilisateurs) :');
+console.log('   - users');
 console.log('   - user_verbs_progress');
-console.log(`\n📁 Fichier : ${db.data}`);
+console.log(`   📁 Fichier : exclu du git (.gitignore)`);
+
+console.log('\n⚠️  Important : Seule la base publique (verbes) est dans git.');
+console.log('   Les données utilisateurs restent locales et privées.');
 
 process.exit(0);

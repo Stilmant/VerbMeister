@@ -11,7 +11,17 @@ Aider les élèves à mémoriser et maîtriser les *unregelmäßige Verben* (ver
 - **Front-end** : React 18 + TypeScript + Vite + Zustand + Pico.css
 - **Back-end** : Node.js + Express + Socket.IO + TypeScript
 - **Base de données** : LowDB (JSON file-based, sans dépendances natives)
+  - `verbs.public.json` - Corpus de verbes (versionné dans git)
+  - `users.private.json` - Données utilisateurs (exclu du git)
 - **Authentification** : JWT + bcryptjs
+
+### 🔒 Sécurité Base de Données
+
+La base de données est **divisée en deux fichiers** pour séparer les données publiques des données sensibles :
+
+- **`server/data/verbs.public.json`** (versionné) : Contient uniquement les définitions de verbes partagées entre tous les utilisateurs. Ce fichier peut être commité dans git car il ne contient que du contenu éducatif.
+
+- **`server/data/users.private.json`** (exclu) : Contient les données sensibles (emails, mots de passe hachés, progression utilisateur). Ce fichier est automatiquement exclu du git via `.gitignore` et ne doit **jamais** être commité.
 
 ## 📁 Structure du Projet
 
@@ -54,8 +64,8 @@ cp .env.example .env
 4. Initialiser et peupler la base de données
 ```bash
 cd server
-npm run db:init
-npm run db:seed
+npm run db:init    # Crée verbs.public.json et users.private.json
+npm run db:seed    # Peuple les verbes dans la base publique
 cd ..
 ```
 

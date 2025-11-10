@@ -1,4 +1,4 @@
-import db from './database.js';
+import { dbPublic } from './database.js';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -12,16 +12,16 @@ console.log('🌱 Seed des verbes en cours...');
 const verbsPath = path.join(__dirname, '../../../data/verbs_seed.de.json');
 const verbsData = JSON.parse(fs.readFileSync(verbsPath, 'utf-8'));
 
-await db.read();
+await dbPublic.read();
 
 let count = 0;
 for (const verb of verbsData) {
   // Vérifier si le verbe existe déjà
-  const exists = db.data!.verbs.some(v => v.infinitiv === verb.infinitiv);
+  const exists = dbPublic.data!.verbs.some(v => v.infinitiv === verb.infinitiv);
 
   if (!exists) {
     const newVerb = {
-      id: db.data!._nextIds.verbs++,
+      id: dbPublic.data!._nextIds.verbs++,
       infinitiv: verb.infinitiv,
       praeteritum: verb.praeteritum,
       partizip_ii: verb.partizip_ii,
@@ -34,15 +34,16 @@ for (const verb of verbsData) {
       notes: verb.notes || undefined
     };
 
-    db.data!.verbs.push(newVerb);
+    dbPublic.data!.verbs.push(newVerb);
     count++;
     console.log(`  ✓ ${verb.infinitiv} (${verb.translation_fr})`);
   }
 }
 
-await db.write();
+await dbPublic.write();
 
-console.log(`\n✅ ${count} verbes insérés avec succès !`);
-console.log(`📊 Total des verbes : ${db.data!.verbs.length}`);
+console.log(`\n✅ ${count} verbes insérés dans la base PUBLIQUE !`);
+console.log(`📊 Total des verbes : ${dbPublic.data!.verbs.length}`);
+console.log(`📁 Fichier versionné dans git pour partage du corpus.`);
 
 process.exit(0);

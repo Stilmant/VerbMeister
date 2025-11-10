@@ -40,6 +40,10 @@ Thumbs.db
 *.sqlite
 *.sqlite3
 
+# Private database (contains user data - must NOT be in git)
+server/data/users.private.json
+server/data/*.private.json
+
 # TypeScript
 *.tsbuildinfo
 

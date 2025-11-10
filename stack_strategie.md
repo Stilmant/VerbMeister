@@ -21,6 +21,9 @@ Ce document définit la stack technique, les outils, et la philosophie d’archi
 - **Socket.IO** : Communication temps réel (chat, notifications, collaboration)
 - **Base de données** :
   - **LowDB** (base JSON file-based, sans compilation native)
+  - **Split public/private** :
+    - `verbs.public.json` : verbes (versionné dans git, partageable)
+    - `users.private.json` : utilisateurs et progression (exclu du git, données sensibles)
   - Simple, performante pour petites/moyennes bases
   - Option future : PostgreSQL si scalabilité nécessaire
 - **Authentification** :

@@ -3,6 +3,9 @@ import { JSONFile } from 'lowdb/node';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -48,45 +51,94 @@ interface UserVerbProgress {
   created_at: string;
 }
 
-interface Database {
-  users: User[];
+// Base publique (verbes uniquement, versionné dans git)
+interface PublicDatabase {
   verbs: Verb[];
+  _nextIds: {
+    verbs: number;
+  };
+}
+
+// Base privée (utilisateurs et progression, exclus du git)
+interface PrivateDatabase {
+  users: User[];
   user_verbs_progress: UserVerbProgress[];
   _nextIds: {
     users: number;
-    verbs: number;
     user_verbs_progress: number;
   };
 }
 
+// Chemins configurables via ENV
 const DB_DIR = path.join(__dirname, '../../data');
-const DB_PATH = path.join(DB_DIR, 'verbmeister.json');
+const DB_PUBLIC_PATH = process.env.DB_PUBLIC_PATH || path.join(DB_DIR, 'verbs.public.json');
+const DB_PRIVATE_PATH = process.env.DB_PRIVATE_PATH || path.join(DB_DIR, 'users.private.json');
 
 // Créer le dossier data s'il n'existe pas
 if (!fs.existsSync(DB_DIR)) {
   fs.mkdirSync(DB_DIR, { recursive: true });
 }
 
-// Configuration par défaut de la base de données
-const defaultData: Database = {
-  users: [],
+// Configuration par défaut - Base publique
+const defaultPublicData: PublicDatabase = {
   verbs: [],
+  _nextIds: {
+    verbs: 1
+  }
+};
+
+// Configuration par défaut - Base privée
+const defaultPrivateData: PrivateDatabase = {
+  users: [],
   user_verbs_progress: [],
   _nextIds: {
     users: 1,
-    verbs: 1,
     user_verbs_progress: 1
   }
 };
 
-const adapter = new JSONFile<Database>(DB_PATH);
-export const db = new Low<Database>(adapter, defaultData);
+// Initialiser les deux bases de données
+const publicAdapter = new JSONFile<PublicDatabase>(DB_PUBLIC_PATH);
+export const dbPublic = new Low<PublicDatabase>(publicAdapter, defaultPublicData);
 
-// Initialiser la base de données
-await db.read();
-db.data ||= defaultData;
-await db.write();
+const privateAdapter = new JSONFile<PrivateDatabase>(DB_PRIVATE_PATH);
+export const dbPrivate = new Low<PrivateDatabase>(privateAdapter, defaultPrivateData);
 
-console.log(`✅ Base de données connectée : ${DB_PATH}`);
+// Initialiser les bases
+await dbPublic.read();
+dbPublic.data ||= defaultPublicData;
+await dbPublic.write();
+
+await dbPrivate.read();
+dbPrivate.data ||= defaultPrivateData;
+await dbPrivate.write();
+
+console.log(`✅ Base publique (verbes) : ${DB_PUBLIC_PATH}`);
+console.log(`✅ Base privée (users) : ${DB_PRIVATE_PATH}`);
+
+// Export de compatibilité pour migration progressive
+// Permet d'accéder aux données via une interface unifiée
+export const db = {
+  get data() {
+    return {
+      verbs: dbPublic.data!.verbs,
+      users: dbPrivate.data!.users,
+      user_verbs_progress: dbPrivate.data!.user_verbs_progress,
+      _nextIds: {
+        verbs: dbPublic.data!._nextIds.verbs,
+        users: dbPrivate.data!._nextIds.users,
+        user_verbs_progress: dbPrivate.data!._nextIds.user_verbs_progress
+      }
+    };
+  },
+  async read() {
+    await dbPublic.read();
+    await dbPrivate.read();
+  },
+  async write() {
+    await dbPublic.write();
+    await dbPrivate.write();
+  }
+};
 
 export default db;
