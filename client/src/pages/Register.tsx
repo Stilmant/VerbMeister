@@ -70,7 +70,18 @@ export default function Register() {
   return (
     <main className="container">
       <div className="hero">
-        <h1>🇩🇪 Bienvenue sur VerbMeister</h1>
+        <h1>
+          <span style={{
+            background: 'linear-gradient(to bottom, #000 33%, #DD0000 33%, #DD0000 66%, #FFCE00 66%)',
+            color: 'white',
+            padding: '0.2rem 0.5rem',
+            borderRadius: '4px',
+            marginRight: '0.5rem',
+            fontWeight: 'bold',
+            fontSize: '0.9em'
+          }}>DE</span>
+          Bienvenue sur VerbMeister
+        </h1>
         <p>Apprends les verbes irréguliers allemands de manière ludique et efficace !</p>
       </div>
 
