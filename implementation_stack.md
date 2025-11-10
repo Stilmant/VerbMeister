@@ -1,7 +1,7 @@
 # 🧩 Implémentation de la Stack — Projet d’évaluation
 
-> Ce document complète le fichier [`STACK-STRATEGIE.md`](./STACK-STRATEGIE.md).  
-> Il se concentre sur la **mise en œuvre concrète** de la stack React / Express / Socket.IO / TypeScript.  
+> Ce document complète le fichier [`STACK-STRATEGIE.md`](./STACK-STRATEGIE.md).
+> Il se concentre sur la **mise en œuvre concrète** de la stack React / Express / Socket.IO / TypeScript.
 > L’objectif : établir une base traditionnelle, claire et maintenable, avant d’évoluer vers la programmation méta-déclarative.
 
 ---
@@ -147,17 +147,18 @@ Le paquet `concurrently` permet de lancer **Vite** et **Express** en parallèle 
 
 ## 🧪 Tests rapides
 
-- **Santé API** → `GET /api/health` doit retourner `{ ok: true }`.  
-- **Connexion Socket** → un `socket.on('connect')` déclenche un log côté serveur.  
+- **Santé API** → `GET /api/health` doit retourner `{ ok: true }`.
+- **Connexion Socket** → un `socket.on('connect')` déclenche un log côté serveur.
 - **Chat** → les messages se propagent instantanément sur deux onglets.
 
 ---
 
 ## 🖯️ Étapes suivantes
-1. Ajouter une persistance simple (SQLite ou PostgreSQL).
-2. Gérer un mini-auth (pseudo ou token).
+1. ✅ ~~Ajouter une persistance simple~~ → **LowDB implémenté** (voir [TECHNIQUE_CHOIX_BASE.md](./TECHNIQUE_CHOIX_BASE.md))
+2. ✅ ~~Gérer un mini-auth~~ → **JWT + bcryptjs implémenté**
 3. Mettre en place un script CI pour build et test.
 4. Préparer un dossier `/meta` pour de futurs essais déclaratifs (plus tard).
+5. **Implémenter les exercices QCM** (Phase 2 du pedagogie_concept.md)
 
 ---
 
@@ -167,6 +168,6 @@ Le paquet `concurrently` permet de lancer **Vite** et **Express** en parallèle 
 
 ---
 
-**Auteur :** Michael Stilmant  
+**Auteur :** Michael Stilmant
 **Dernière mise à jour :** 10 novembre 2025
 

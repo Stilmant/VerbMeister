@@ -20,11 +20,12 @@ Ce document définit la stack technique, les outils, et la philosophie d’archi
 - **Express** : API REST, middlewares, structure claire
 - **Socket.IO** : Communication temps réel (chat, notifications, collaboration)
 - **Base de données** :
-  - **SQLite** (pour prototypage/local)
-  - **PostgreSQL** (option production/scalabilité)
+  - **LowDB** (base JSON file-based, sans compilation native)
+  - Simple, performante pour petites/moyennes bases
+  - Option future : PostgreSQL si scalabilité nécessaire
 - **Authentification** :
   - **JWT** (JSON Web Token) pour sessions sécurisées
-  - **bcrypt** pour le hash des mots de passe
+  - **bcryptjs** pour le hash des mots de passe (pure JS, pas de dépendances natives)
 
 ### **Outils & DevOps**
 - **ESLint/Prettier** : Qualité et formatage du code
@@ -52,7 +53,7 @@ Ce document définit la stack technique, les outils, et la philosophie d’archi
 
 - **Démarrage** :
   - UI React/TS + Zustand + Pico.css
-  - API Express/TS + Socket.IO + SQLite
+  - API Express/TS + Socket.IO + LowDB
 - **Évolution** :
   - Migration possible vers PostgreSQL
   - Ajout d’un moteur de génération d’UI (méta-déclaratif)

@@ -31,11 +31,6 @@ cd ..
 ```powershell
 cd server
 npm run db:init
-```
-
-### 5. Charger les verbes (seed)
-
-```powershell
 npm run db:seed
 cd ..
 ```
@@ -58,7 +53,7 @@ L'application sera accessible sur :
 VerbMeister/
 ├── server/              # Backend Express + TypeScript
 │   ├── src/
-│   │   ├── db/          # Base de données SQLite
+│   │   ├── db/          # Base de données LowDB (JSON)
 │   │   ├── routes/      # Routes API
 │   │   └── index.ts     # Point d'entrée serveur
 │   └── package.json
@@ -72,8 +67,10 @@ VerbMeister/
 │   └── package.json
 │
 ├── data/                # Données et base de données
-│   ├── verbs_seed.de.json
-│   └── verbmeister.db   (créé après init)
+│   └── verbs_seed.de.json
+│
+├── server/data/         # Base LowDB (créée après init)
+│   └── verbmeister.json
 │
 └── package.json         # Root scripts
 ```

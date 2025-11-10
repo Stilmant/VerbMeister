@@ -10,8 +10,8 @@ Aider les élèves à mémoriser et maîtriser les *unregelmäßige Verben* (ver
 
 - **Front-end** : React 18 + TypeScript + Vite + Zustand + Pico.css
 - **Back-end** : Node.js + Express + Socket.IO + TypeScript
-- **Base de données** : SQLite (dev) / PostgreSQL (prod)
-- **Authentification** : JWT + bcrypt
+- **Base de données** : LowDB (JSON file-based, sans dépendances natives)
+- **Authentification** : JWT + bcryptjs
 
 ## 📁 Structure du Projet
 
@@ -51,10 +51,11 @@ cp .env.example .env
 # Modifier JWT_SECRET et autres variables
 ```
 
-4. Initialiser la base de données
+4. Initialiser et peupler la base de données
 ```bash
 cd server
 npm run db:init
+npm run db:seed
 cd ..
 ```
 
@@ -69,10 +70,18 @@ L'application sera accessible sur :
 
 ## 📚 Documentation
 
-- [Pédagogie & Concept](./pedagogie_concept.md)
-- [Stack & Stratégie](./stack_strategie.md)
-- [Implémentation](./implementation_stack.md)
-- [Checklist Développement](./checklist_developpement.md)
+### Pédagogie & Développement
+- [Pédagogie & Concept](./pedagogie_concept.md) - Méthodes d'apprentissage et corpus de verbes
+- [Stack & Stratégie](./stack_strategie.md) - Choix techniques et architecture
+- [Implémentation](./implementation_stack.md) - Structure du code et patterns
+- [Checklist Développement](./checklist_developpement.md) - Tâches et progression
+
+### Technique & Déploiement
+- [État du Projet](./ETAT_PROJET.md) - 📊 Vue d'ensemble et statistiques actuelles
+- [Décisions Techniques](./DECISIONS_TECHNIQUES.md) - 📝 Historique des choix architecturaux
+- [Choix Technique : LowDB vs SQLite](./TECHNIQUE_CHOIX_BASE.md) - 🔍 Analyse complète des bases de données
+- [Réponse : Échec SQLite](./REPONSE_SQLITE_LOWDB.md) - 💬 Explication du switch vers LowDB
+- [Déploiement VPS](./DEPLOYMENT_VPS.md) - 🚀 Guide complet pour OVH/Ubuntu
 
 ## 🧪 Tests
 
@@ -90,6 +99,16 @@ npm run test:e2e
 npm run build
 npm run start
 ```
+
+## 🌐 Déploiement VPS
+
+Voir le guide complet de déploiement sur OVH/Ubuntu : **[DEPLOYMENT_VPS.md](./DEPLOYMENT_VPS.md)**
+
+Le guide couvre :
+- Configuration Nginx + PM2
+- Certificat SSL Let's Encrypt
+- Sauvegarde base LowDB
+- Mises à jour et monitoring
 
 ## 🤝 Contribution
 

@@ -271,11 +271,11 @@ L'intégration de l'API OpenAI permettra d'enrichir l'expérience d'apprentissag
 
 | Couche | Technologie | Description |
 |--------|--------------|-------------|
-| Front-end | React 18 + TypeScript (Vite) | Interface d’apprentissage |
+| Front-end | React 18 + TypeScript (Vite) | Interface d'apprentissage |
 | State | Zustand | Gestion globale (verbes, progression, utilisateur) |
 | Back-end | Node.js + Express + Socket.IO | API + synchronisation temps réel |
-| Auth | JWT + bcrypt | Sécurité utilisateur |
-| DB | SQLite / PostgreSQL | Stockage des verbes, profils et scores |
+| Auth | JWT + bcryptjs | Sécurité utilisateur |
+| DB | LowDB (JSON) | Stockage des verbes, profils et scores (migration SQLite/PostgreSQL possible si > 500 users) |
 | IA | OpenAI API (optionnelle) | Génération de phrases et feedback intelligent |
 
 Compléments futurs éventuels : `pino` (logs), `zod` (validation schémas), `prisma` (accès DB), `vitest` (tests), `playwright` (tests e2e).
