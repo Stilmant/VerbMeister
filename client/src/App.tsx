@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAppStore } from './store/useAppStore';
-import Register from './pages/Register';
-import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
-import Navbar from './components/Navbar';
+import Register from './pages/Register.tsx';
+import Login from './pages/Login.tsx';
+import Dashboard from './pages/Dashboard.tsx';
+import Navbar from './components/Navbar.tsx';
 
 function App() {
   const isAuthenticated = useAppStore((state) => state.isAuthenticated);

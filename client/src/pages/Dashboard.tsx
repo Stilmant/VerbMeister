@@ -1,17 +1,28 @@
 import { useEffect, useState } from 'react';
-import { useAppStore } from '../store/useAppStore';
+import { useNavigate } from 'react-router-dom';
+import { useAppStore } from '../store/useAppStore.ts';
 
 export default function Dashboard() {
+  const navigate = useNavigate();
   const user = useAppStore((state) => state.user);
   const verbs = useAppStore((state) => state.verbs);
   const setVerbs = useAppStore((state) => state.setVerbs);
   const token = useAppStore((state) => state.token);
+  const logout = useAppStore((state) => state.logout);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [selectedVerb, setSelectedVerb] = useState<any>(null);
 
   useEffect(() => {
+    // Vérifier que l'utilisateur a bien toutes ses informations
+    if (token && !user) {
+      // Token présent mais pas d'info utilisateur = état corrompu
+      console.log('État d\'authentification corrompu, nettoyage...');
+      logout();
+      navigate('/login');
+      return;
+    }
     loadVerbs();
   }, []);
 

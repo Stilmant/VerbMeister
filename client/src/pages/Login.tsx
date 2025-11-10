@@ -1,6 +1,6 @@
 import { useState, FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAppStore } from '../store/useAppStore';
+import { useAppStore } from '../store/useAppStore.ts';
 
 export default function Login() {
   const navigate = useNavigate();

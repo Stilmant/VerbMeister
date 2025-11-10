@@ -38,9 +38,22 @@ interface AppState {
   setCurrentVerb: (verb: Verb | null) => void;
 }
 
+// Récupérer les données depuis localStorage au démarrage
+const getStoredUser = (): User | null => {
+  const userStr = localStorage.getItem('user');
+  if (userStr) {
+    try {
+      return JSON.parse(userStr);
+    } catch {
+      return null;
+    }
+  }
+  return null;
+};
+
 export const useAppStore = create<AppState>((set) => ({
-  // État initial
-  user: null,
+  // État initial - restaurer depuis localStorage
+  user: getStoredUser(),
   token: localStorage.getItem('token'),
   isAuthenticated: !!localStorage.getItem('token'),
   verbs: [],
@@ -53,12 +66,20 @@ export const useAppStore = create<AppState>((set) => ({
     } else {
       localStorage.removeItem('token');
     }
+
+    if (user) {
+      localStorage.setItem('user', JSON.stringify(user));
+    } else {
+      localStorage.removeItem('user');
+    }
+
     set({ user, token, isAuthenticated: !!token });
   },
 
   logout: () => {
     localStorage.removeItem('token');
-    set({ user: null, token: null, isAuthenticated: false });
+    localStorage.removeItem('user');
+    set({ user: null, token: null, isAuthenticated: false, verbs: [], currentVerb: null });
   },
 
   setVerbs: (verbs) => set({ verbs }),
