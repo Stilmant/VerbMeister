@@ -1,0 +1,263 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "test@test.lu",
+      "password_hash": "$2a$10$ekIxYUpXg75iI.8pUbfsNeuvTsjOG4atv1vWoepjQdBsgqeUzBJDy",
+      "first_name": "Michael",
+      "last_name": "test",
+      "role": "eleve",
+      "created_at": "2025-11-10T10:43:28.724Z",
+      "last_login": "2025-11-10T10:44:13.083Z"
+    }
+  ],
+  "verbs": [
+    {
+      "id": 1,
+      "infinitiv": "kriechen",
+      "praeteritum": "kroch",
+      "partizip_ii": "gekrochen",
+      "hilfsverb": "sein",
+      "sonderformen_praesens": [
+        "du kriechst",
+        "er kriecht"
+      ],
+      "alternatives": null,
+      "translation_fr": "ramper",
+      "set_id": 1,
+      "group_label": "L-Gruppe Seite 1",
+      "notes": "mouvement → auxiliaire sein"
+    },
+    {
+      "id": 2,
+      "infinitiv": "laden",
+      "praeteritum": "lud",
+      "partizip_ii": "geladen",
+      "hilfsverb": "haben",
+      "sonderformen_praesens": [
+        "du lädst",
+        "er lädt"
+      ],
+      "alternatives": null,
+      "translation_fr": "charger",
+      "set_id": 1,
+      "group_label": "L-Gruppe Seite 1",
+      "notes": "a→ä au présent"
+    },
+    {
+      "id": 3,
+      "infinitiv": "lassen",
+      "praeteritum": "ließ",
+      "partizip_ii": "gelassen",
+      "hilfsverb": "haben",
+      "sonderformen_praesens": [
+        "du lässt",
+        "er lässt"
+      ],
+      "alternatives": null,
+      "translation_fr": "laisser",
+      "set_id": 1,
+      "group_label": "L-Gruppe Seite 1",
+      "notes": "a→ä au présent"
+    },
+    {
+      "id": 4,
+      "infinitiv": "laufen",
+      "praeteritum": "lief",
+      "partizip_ii": "gelaufen",
+      "hilfsverb": "sein",
+      "sonderformen_praesens": [
+        "du läufst",
+        "er läuft"
+      ],
+      "alternatives": null,
+      "translation_fr": "courir",
+      "set_id": 1,
+      "group_label": "L-Gruppe Seite 1",
+      "notes": "mouvement → auxiliaire sein; a→ä au présent"
+    },
+    {
+      "id": 5,
+      "infinitiv": "leiden",
+      "praeteritum": "litt",
+      "partizip_ii": "gelitten",
+      "hilfsverb": "haben",
+      "sonderformen_praesens": [
+        "du leidest",
+        "er leidet"
+      ],
+      "alternatives": null,
+      "translation_fr": "souffrir",
+      "set_id": 1,
+      "group_label": "L-Gruppe Seite 1"
+    },
+    {
+      "id": 6,
+      "infinitiv": "leihen",
+      "praeteritum": "lieh",
+      "partizip_ii": "geliehen",
+      "hilfsverb": "haben",
+      "sonderformen_praesens": [
+        "du leihst",
+        "er leiht"
+      ],
+      "alternatives": null,
+      "translation_fr": "prêter",
+      "set_id": 1,
+      "group_label": "L-Gruppe Seite 1"
+    },
+    {
+      "id": 7,
+      "infinitiv": "lesen",
+      "praeteritum": "las",
+      "partizip_ii": "gelesen",
+      "hilfsverb": "haben",
+      "sonderformen_praesens": [
+        "du liest",
+        "er liest"
+      ],
+      "alternatives": null,
+      "translation_fr": "lire",
+      "set_id": 1,
+      "group_label": "L-Gruppe Seite 1",
+      "notes": "e→ie au présent"
+    },
+    {
+      "id": 8,
+      "infinitiv": "liegen",
+      "praeteritum": "lag",
+      "partizip_ii": "gelegen",
+      "hilfsverb": "haben",
+      "sonderformen_praesens": [
+        "du liegst",
+        "er liegt"
+      ],
+      "alternatives": null,
+      "translation_fr": "être allongé",
+      "set_id": 1,
+      "group_label": "L-Gruppe Seite 1",
+      "notes": "peut aussi signifier 'être situé'"
+    },
+    {
+      "id": 9,
+      "infinitiv": "lügen",
+      "praeteritum": "log",
+      "partizip_ii": "gelogen",
+      "hilfsverb": "haben",
+      "sonderformen_praesens": [
+        "du lügst",
+        "er lügt"
+      ],
+      "alternatives": null,
+      "translation_fr": "mentir",
+      "set_id": 1,
+      "group_label": "L-Gruppe Seite 1"
+    },
+    {
+      "id": 10,
+      "infinitiv": "mahlen",
+      "praeteritum": "mahlte",
+      "partizip_ii": "gemahlen",
+      "hilfsverb": "haben",
+      "sonderformen_praesens": [
+        "du mahlst",
+        "er mahlt"
+      ],
+      "alternatives": null,
+      "translation_fr": "moudre",
+      "set_id": 1,
+      "group_label": "L-Gruppe Seite 1"
+    },
+    {
+      "id": 11,
+      "infinitiv": "meiden",
+      "praeteritum": "mied",
+      "partizip_ii": "gemieden",
+      "hilfsverb": "haben",
+      "sonderformen_praesens": [
+        "du meidest",
+        "er meidet"
+      ],
+      "alternatives": null,
+      "translation_fr": "éviter",
+      "set_id": 1,
+      "group_label": "L-Gruppe Seite 1"
+    },
+    {
+      "id": 12,
+      "infinitiv": "melken",
+      "praeteritum": "melkte",
+      "partizip_ii": "gemolken",
+      "hilfsverb": "haben",
+      "sonderformen_praesens": [
+        "du melkst",
+        "er melkt",
+        "du milchst",
+        "er milkt"
+      ],
+      "alternatives": {
+        "praeteritum": [
+          "melkte",
+          "molk"
+        ]
+      },
+      "translation_fr": "traire",
+      "set_id": 1,
+      "group_label": "L-Gruppe Seite 1",
+      "notes": "présent alternatif 'milken' en allemand standard"
+    },
+    {
+      "id": 13,
+      "infinitiv": "messen",
+      "praeteritum": "maß",
+      "partizip_ii": "gemessen",
+      "hilfsverb": "haben",
+      "sonderformen_praesens": [
+        "du misst",
+        "er misst"
+      ],
+      "alternatives": null,
+      "translation_fr": "mesurer",
+      "set_id": 1,
+      "group_label": "L-Gruppe Seite 1",
+      "notes": "e→i au présent"
+    },
+    {
+      "id": 14,
+      "infinitiv": "nehmen",
+      "praeteritum": "nahm",
+      "partizip_ii": "genommen",
+      "hilfsverb": "haben",
+      "sonderformen_praesens": [
+        "du nimmst",
+        "er nimmt"
+      ],
+      "alternatives": null,
+      "translation_fr": "prendre",
+      "set_id": 1,
+      "group_label": "L-Gruppe Seite 1",
+      "notes": "e→i + doublement de la consonne au présent"
+    },
+    {
+      "id": 15,
+      "infinitiv": "nennen",
+      "praeteritum": "nannte",
+      "partizip_ii": "genannt",
+      "hilfsverb": "haben",
+      "sonderformen_praesens": [
+        "du nennst",
+        "er nennt"
+      ],
+      "alternatives": null,
+      "translation_fr": "nommer",
+      "set_id": 1,
+      "group_label": "L-Gruppe Seite 1"
+    }
+  ],
+  "user_verbs_progress": [],
+  "_nextIds": {
+    "users": 2,
+    "verbs": 16,
+    "user_verbs_progress": 1
+  }
+}
