@@ -1,5 +1,7 @@
 # 🔍 Réponse : Échec SQLite et Choix LowDB
 
+> Statut: document explicatif (annexe). Pour la stack actuelle et les choix à jour, voir `stack_strategie.md`.
+
 ## Ta Question
 
 > "Cela dit est-ce que tu peux expliquer pourquoi on a eu cet échec SQLite alors que le premier projet qu'on a fait il y a deux jours utilisait `import Database from 'better-sqlite3';` il me semble sans problème. tu as switché vite sur LowDB est-ce que LowDB reste adapté?"

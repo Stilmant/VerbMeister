@@ -1,6 +1,6 @@
 # 🧩 Implémentation de la Stack — Projet d’évaluation
 
-> Ce document complète le fichier [`STACK-STRATEGIE.md`](./STACK-STRATEGIE.md).
+> Ce document complète le fichier [`stack_strategie.md`](./stack_strategie.md).
 > Il se concentre sur la **mise en œuvre concrète** de la stack React / Express / Socket.IO / TypeScript.
 > L’objectif : établir une base traditionnelle, claire et maintenable, avant d’évoluer vers la programmation méta-déclarative.
 

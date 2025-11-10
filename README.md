@@ -70,18 +70,16 @@ L'application sera accessible sur :
 
 ## 📚 Documentation
 
-### Pédagogie & Développement
-- [Pédagogie & Concept](./pedagogie_concept.md) - Méthodes d'apprentissage et corpus de verbes
-- [Stack & Stratégie](./stack_strategie.md) - Choix techniques et architecture
-- [Implémentation](./implementation_stack.md) - Structure du code et patterns
-- [Checklist Développement](./checklist_developpement.md) - Tâches et progression
+### Références principales
+- [Pédagogie & Concept](./pedagogie_concept.md)
+- [Stack & Stratégie](./stack_strategie.md)
+- [Implémentation](./implementation_stack.md)
+- [Checklist Développement](./checklist_developpement.md)
 
-### Technique & Déploiement
-- [État du Projet](./ETAT_PROJET.md) - 📊 Vue d'ensemble et statistiques actuelles
-- [Décisions Techniques](./DECISIONS_TECHNIQUES.md) - 📝 Historique des choix architecturaux
-- [Choix Technique : LowDB vs SQLite](./TECHNIQUE_CHOIX_BASE.md) - 🔍 Analyse complète des bases de données
-- [Réponse : Échec SQLite](./REPONSE_SQLITE_LOWDB.md) - 💬 Explication du switch vers LowDB
-- [Déploiement VPS](./DEPLOYMENT_VPS.md) - 🚀 Guide complet pour OVH/Ubuntu
+### Annexes (optionnel)
+- [Déploiement VPS](./DEPLOYMENT_VPS.md)
+
+Astuce: les autres documents d'analyse détaillée ont été conservés à la racine pour référence (TECHNIQUE_CHOIX_BASE.md, REPONSE_SQLITE_LOWDB.md, ETAT_PROJET.md, DECISIONS_TECHNIQUES.md), mais ne sont pas nécessaires au quotidien.
 
 ## 🧪 Tests
 

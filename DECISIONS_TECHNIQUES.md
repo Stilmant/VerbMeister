@@ -1,5 +1,7 @@
 # 📝 Décisions Techniques - VerbMeister
 
+> Statut: historique des décisions (annexe). Les références actives sont dans `stack_strategie.md`.
+
 Ce document trace les décisions techniques importantes prises pendant le développement.
 
 ---

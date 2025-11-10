@@ -1,5 +1,7 @@
 # 🗄️ Choix de Base de Données : LowDB vs SQLite
 
+> Statut: document d'analyse détaillée (annexe). Pour l'usage quotidien du projet, se référer aux 4 fichiers principaux: `pedagogie_concept.md`, `stack_strategie.md`, `implementation_stack.md`, `checklist_developpement.md`.
+
 ## 🤔 Pourquoi LowDB et pas SQLite comme Brume ?
 
 ### Contexte : L'échec better-sqlite3

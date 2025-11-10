@@ -1,5 +1,7 @@
 # 📊 État du Projet VerbMeister
 
+> Statut: synthèse ponctuelle (annexe). Non requis pour le flux de développement quotidien.
+
 **Date** : 10 novembre 2025
 **Status** : ✅ Fully Functional (MVP Phase 1 Complete)
 
